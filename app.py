@@ -50,7 +50,7 @@ for txt_file, docx_file, output_file in FILE_PAIRS:
     print(f"Fișierul rezultat a fost salvat ca {output_file}")
 
 from merge_docx import (
-    merge_docx,  # pip install git+https://github.com/ryanpierson/merge_docx.git
+    merge_docx,  # pip3 install git+https://github.com/ryanpierson/merge_docx.git
 )
 
 merge_docx("/tmp/sample_rez_n1.docx", "/tmp/sample_rez_n2.docx", "/tmp/rez.docx")
