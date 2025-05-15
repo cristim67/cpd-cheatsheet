@@ -1,7 +1,7 @@
 import os
 import re
 
-from docx import Document
+from docx import Document  # pip3 install python-docx
 
 FILE_PAIRS = [
     ('valori/n1.txt', 'sample/n1.docx', '/tmp/sample_rez_n1.docx'),
