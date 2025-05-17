@@ -4,9 +4,12 @@ import re
 from docx import Document  # pip3 install python-docx
 
 FILE_PAIRS = [
-    ('valori/n1.txt', 'sample/n1.docx', '/tmp/sample_rez_n1.docx'),
-    ('valori/n2.txt', 'sample/n2.docx', '/tmp/sample_rez_n2.docx'),
-    ('valori/n3.txt', 'sample/n3.docx', '/tmp/sample_rez_n3.docx')
+    ('valori/p1_n1.txt', 'sample/n1.docx', '/tmp/sample_rez_n1.docx'),
+    ('valori/p1_n2.txt', 'sample/n2.docx', '/tmp/sample_rez_n2.docx'),
+    ('valori/p1_n3.txt', 'sample/n3.docx', '/tmp/sample_rez_n3.docx'),
+    ('valori/p2_n1.txt', 'sample/n1.docx', '/tmp/sample_rez_n4.docx'),
+    ('valori/p2_n2.txt', 'sample/n2.docx', '/tmp/sample_rez_n5.docx'),
+    ('valori/p2_n3.txt', 'sample/n3.docx', '/tmp/sample_rez_n6.docx'),
 ]
 
 def proceseaza_fisier_text(nume_fisier):
@@ -54,7 +57,11 @@ from merge_docx import (
 )
 
 merge_docx("/tmp/sample_rez_n1.docx", "/tmp/sample_rez_n2.docx", "/tmp/rez.docx")
-merge_docx("/tmp/rez.docx", "/tmp/sample_rez_n3.docx", "rez_final.docx")
+merge_docx("/tmp/rez.docx", "/tmp/sample_rez_n3.docx", "/tmp/rez.docx")
+merge_docx("/tmp/rez.docx", "/tmp/sample_rez_n4.docx", "/tmp/rez.docx")
+merge_docx("/tmp/rez.docx", "/tmp/sample_rez_n5.docx", "/tmp/rez.docx")
+merge_docx("/tmp/rez.docx", "/tmp/sample_rez_n6.docx", "rez_final.docx")
+
 
 for _, _, temp_file in FILE_PAIRS:
     if os.path.exists(temp_file):
